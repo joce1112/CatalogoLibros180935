@@ -1,20 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import Amplify from "aws-amplify";
+import awsconfig from "./src/aws-exports";
+import { withAuthenticator} from 'aws-amplify-react-native';
+import { ScrollView, Text} from 'react-native';
+import MainNavigator from './src/components/Navigator';
 
-export default function App() {
+import { GlobalProvider } from './src/context/global/global.context';
+
+
+Amplify.configure(awsconfig);
+
+function App(authData) {
+  console.log({authData}+'estoooo');
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+ <>
+  <GlobalProvider>
+      <Text>{authData.username}</Text> 
+      <Text>{authData.refreshToken}</Text>
+    <MainNavigator />
+  </GlobalProvider>
+  
+ </>
+ );
 }
+export default withAuthenticator(App);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
