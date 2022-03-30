@@ -33,24 +33,15 @@ export default function CatalogoScreen({ onPress }){
          <Card.Divider />
          
         {todos && 
-        todos.map((todo)=><Text key={todo.id}>{`${todo.name}`}</Text>)}
+        todos.map((todo)=><Text key={todo.id}>Titulo: {`${todo.titule}`}</Text>)}
        {todos && 
-        todos.map((todo)=><Text key={todo.id}>{` ${todo.description}`}</Text>)}
+        todos.map((todo)=><Text key={todo.id}>Autor: {` ${todo.autor}`}</Text>)}
+        {todos && 
+        todos.map((todo)=><Text key={todo.id}>Isbm: {` ${todo.isbm}`}</Text>)}
          {/* {todos && 
         todos.map((todo)=><Text key={todo.id}>{` ${todo.ipr}`}</Text>)} */}
         </Card>
-       <Card>
-            <ListItem>
-              
-              <Badge
-                value={3}
-                textStyle={{ color: 'orange' }}
-                containerStyle={{ marginTop: -20 }}
-              />
-               
-            </ListItem> 
-        </Card> 
-        
+            
         </ScrollView>
         
         );

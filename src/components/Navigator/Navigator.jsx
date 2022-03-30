@@ -40,9 +40,11 @@ export default function MainNavigator(){
           : "ios-information-circle-outline"
           // ?"ios-information-pluscircleo"
         }else if(route.name === "Registro"){
-        iconName ="ios-add-circle-outline";          
+          iconName = focused
+          ? "ios-add-circle"
+          : "ios-add-circle-outline"
         }else if(route.name === "Catalogo"){
-          iconName ="ios-list";  
+           iconName ="ios-list";  
         }
         return <Ionicons name={iconName} size={size} color={color}/>;
 

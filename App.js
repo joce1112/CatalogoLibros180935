@@ -10,13 +10,13 @@ import { GlobalProvider } from './src/context/global/global.context';
 
 Amplify.configure(awsconfig);
 
-function App(authData) {
-  console.log({authData}+'estoooo');
+function App({authData}) {
+  console.log({authData});
   return (
  <>
   <GlobalProvider>
-      <Text>{authData.username}</Text> 
-      <Text>{authData.refreshToken}</Text>
+  <Text>{authData.usernma}</Text> 
+
     <MainNavigator />
   </GlobalProvider>
   

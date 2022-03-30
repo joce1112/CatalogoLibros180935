@@ -8,19 +8,19 @@ import ButtonComponent from '../../components/Button';
  export default function SettingsScreen(){
   const [todos, setTodos] = useState();
 
-  const [todo, setTodo] = useState({name:"", description:""});
+  const [todo, setTodo] = useState({titule:"", autor:"", isbm:""});
   async function listTodos(){
     const todosFetched = await list();
     if(todosFetched) setTodos(todosFetched);
   }
-  async function createTodo(name, description){
-    const todoCreated = await create({name,description})
+  async function createTodo(titule, autor, isbm){
+    const todoCreated = await create({titule,autor,isbm})
     console.log(todoCreated)
     return todoCreated;
   }
  
   const addData = () =>{
-    createTodo(todo.name, todo.description, todo.ipr);
+    createTodo(todo.titule, todo.autor, todo.isbm);
     Alert.alert('Se registro correctamente el libro');
   };
 
@@ -43,22 +43,28 @@ import ButtonComponent from '../../components/Button';
      <Text>Titulo:</Text>
      <TextInput  
      onChangeText ={(text) => 
-      setTodo((current) => ({ ...current, name: text}))
+      setTodo((current) => ({ ...current, titule: text}))
       }
       style={{width: 300, height:50, backgroundColor:"#e8eaed", }}/> 
      <Text>Autor:</Text>
      
      <TextInput  
      onChangeText={(text) =>
-      setTodo((current)=> ({ ... current, description:text}))
+      setTodo((current)=> ({ ... current, autor:text}))
       }
      style={{width: 300, height:50, backgroundColor:"#e8eaed"}}
      /> 
-     
-     
-      <Text>Settings Screen</Text>
-      <ButtonComponent title="Create todo" onPress= {addData} />
-      </Card>
+     <Text>Isbm:</Text>
+
+     <TextInput  
+     onChangeText={(text) =>
+      setTodo((current)=> ({ ... current, isbm:text}))
+      }
+     style={{width: 300, height:50, backgroundColor:"#e8eaed"}}
+     /> 
+        </Card>
+      <ButtonComponent title="Agregar" onPress= {addData} />
+
       </View>
       );
   }

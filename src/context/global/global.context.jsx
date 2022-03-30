@@ -7,6 +7,7 @@ const initialState ={
 export const GlobalContext = createContext(initialState);
 export const GlobalProvider =({children})=>{
 const [state, setState] = useState(initialState);
+
 function login(){
  const user = {name:"Juan", lastname:"Perez"};
  setState(current =>({ ... current, user}));
