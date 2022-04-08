@@ -2,10 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ScrollView, Text} from 'react-native';
 import { styles } from "./Catalogos.styles";
 import {list, onCreate} from '../../services/todos';
-import { Card, ListItem, Badge} from 'react-native-elements';
-
-
- 
+import { Card, ListItem, Badge} from 'react-native-elements'; 
 export default function CatalogoScreen({ onPress }){
     const [todos, setTodos] = useState();
 
@@ -28,20 +25,16 @@ export default function CatalogoScreen({ onPress }){
     
       return(
         <ScrollView>
-         <Card>
-         <Card.Title>Lista de libros disponibles</Card.Title>
-         <Card.Divider />
-         
-        {todos && 
-        todos.map((todo)=><Text key={todo.id}>Titulo: {`${todo.titule}`}</Text>)}
-       {todos && 
-        todos.map((todo)=><Text key={todo.id}>Autor: {` ${todo.autor}`}</Text>)}
-        {todos && 
-        todos.map((todo)=><Text key={todo.id}>Isbm: {` ${todo.isbm}`}</Text>)}
-         {/* {todos && 
-        todos.map((todo)=><Text key={todo.id}>{` ${todo.ipr}`}</Text>)} */}
+          {todos && todos.map((todo)=>
+         <Card key={todo.id}>                      
+           <Text>Nombre: {`${todo.Nombre}`}</Text>
+           <Text>Descripcion: {`${todo.Descripcion}`}</Text>
+           <Text>Isbm: {`${todo.Isbm}`}</Text>
+           <Text>Estatus: {`${todo.Estatus}`}</Text>
+           <Text>Categoria: {`${todo.Categoria}`}</Text>
+           <Text>Fecha: {`${todo.createdAt}`}</Text>
         </Card>
-            
+            )}
         </ScrollView>
         
         );

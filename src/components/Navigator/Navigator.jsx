@@ -4,7 +4,7 @@ import { createBottomTabNavigator }from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Ionicons from "react-native-vector-icons/Ionicons";
 
-import LoginScreen from "../../pages/Login";
+// import LoginScreen from "../../pages/Login";
 import SettingsScreen from '../../pages/Settings';
 import HomeScreen from '../../pages/Home';
 import { GlobalContext } from '../../context/global/global.context';
@@ -18,17 +18,7 @@ export default function MainNavigator(){
     console.log({state});
    return (
    <NavigationContainer>
-     {!state.user ? (
-     <Stack.Navigator>
-       <Stack.Screen 
-       options={{ headerShown: false }}
-       children={(props)=>(
-         <LoginScreen { ... props} onPress={()=>login()}/>
-       )}
-       name="Login"
-       />
-     </Stack.Navigator>
-     ) : (
+    
     <Tab.Navigator 
      screenOptions={({ route }) => ({
        tabBarIcon:({ focused, color, size })=>{
@@ -65,7 +55,8 @@ export default function MainNavigator(){
       
      </Tab.Navigator>
      
-     )}
+     
+     
      
    </NavigationContainer>
    );
