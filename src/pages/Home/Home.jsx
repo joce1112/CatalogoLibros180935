@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, Linking } from "react-native";
+import { Text, View, Linking, Button } from "react-native";
 import { styles } from './Home.styles';
 import ButtonComponent from "../../components/Button";
 import Amplify from "aws-amplify";
@@ -38,14 +38,15 @@ function HomeScreen({authData}) {
 <Text style={{paddingBottom:10}}> {i18n.t("phone")}: {authData.attributes.phone_number}</Text>   
 </Card>
 
-<ButtonComponent title="Logout" onPress={signOut} color="orange"/> 
-    
-<Text style={{ color: 'orange' , alignItems: 'center',justifyContent: 'center'}}
+<View  style={styles.button}>
+<Button title="Logout" onPress={signOut} color="orange" />
+
+<Text style={{ color: 'orange' , alignItems: 'center',justifyContent: 'center', fontSize:20, marginTop:10}}
       onPress={() => Linking.openURL('https://github.com/joce1112/CatalogoLibros180935')}>
         Git Hub
 </Text>
 </View>
-
+</View>
     );
 }
 export default withAuthenticator(HomeScreen);
