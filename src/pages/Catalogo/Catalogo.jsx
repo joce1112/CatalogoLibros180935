@@ -27,12 +27,12 @@ export default function CatalogoScreen({ onPress }){
         <ScrollView>
           {todos && todos.map((todo)=>
          <Card key={todo.id}>                      
-           <Text>Nombre: {`${todo.Nombre}`}</Text>
-           <Text>Descripcion: {`${todo.Descripcion}`}</Text>
-           <Text>Isbm: {`${todo.Isbm}`}</Text>
-           <Text>Estatus: {`${todo.Estatus}`}</Text>
-           <Text>Categoria: {`${todo.Categoria}`}</Text>
-           <Text>Fecha: {`${todo.createdAt}`}</Text>
+           <Text>{i18n.t("name")}: {`${todo.Nombre}`}</Text>
+           <Text>{i18n.t("description")}: {`${todo.Descripcion}`}</Text>
+           <Text>{i18n.t("isbm")}: {`${todo.Isbm}`}</Text>
+           <Text>{i18n.t("status")}: {`${todo.Estatus}`}</Text>
+           <Text>{i18n.t("category")}: {`${todo.Categoria}`}</Text>
+           <Text>{i18n.t("date")}: {`${todo.createdAt}`}</Text>
         </Card>
             )}
         </ScrollView>

@@ -25,40 +25,27 @@ function HomeScreen({authData}) {
     console.log({authData}+'estoooo');
   
     return(      
-        <Camara/>       
-    //     <View style={styles.container}>
-                
-    //         <Card>
-    //      <Card.Title>Perfil</Card.Title>
-    //      <Card.Divider />
-    // <Text>Usuario:  {authData.username}</Text> 
-    // <Text>Email:   {authData.attributes.email}</Text> 
-    // <Text>Telefono: {authData.attributes.phone_number}</Text>   
-    // </Card>
-    // <ButtonComponent title="Logout" onPress={signOut} color="orange"/> 
+        <View style={styles.container}>
+        <View style={styles.camera}>
+            <Camara/>
+        </View>
         
-    // <Text style={{ color: 'orange' }}
-    //       onPress={() => Linking.openURL('https://github.com/joce1112/CatalogoLibros180935')}>
-    //         Git Hub
-    // </Text>
-    // </View>
+        <Card style={{paddingBottom:100}}>
+     <Card.Title style={{color:"red", paddingBottom:20}}>{i18n.t("profile")}</Card.Title>
+     <Card.Divider />
+<Text style={{paddingBottom:10}}> {i18n.t("user")}:  {authData.username}</Text> 
+<Text style={{paddingBottom:10}}> {i18n.t("email")}:   {authData.attributes.email}</Text> 
+<Text style={{paddingBottom:10}}> {i18n.t("phone")}: {authData.attributes.phone_number}</Text>   
+</Card>
 
-        
-       
-    // <Card>
-    //      <Card.Title>Perfil</Card.Title>
-    //      <Card.Divider />
-    // <Text>Usuario:  {authData.username}</Text> 
-    // <Text>Email:   {authData.attributes.email}</Text> 
-    // <Text>Telefono: {authData.attributes.phone_number}</Text>   
-    // </Card>
-    // <ButtonComponent title="Logout" onPress={signOut} color="orange"/> 
-        
-    // <Text style={{ color: 'orange' }}
-    //       onPress={() => Linking.openURL('https://github.com/joce1112/CatalogoLibros180935')}>
-    //         Git Hub
-    // </Text>
-    // </View>
+<ButtonComponent title="Logout" onPress={signOut} color="orange"/> 
+    
+<Text style={{ color: 'orange' , alignItems: 'center',justifyContent: 'center'}}
+      onPress={() => Linking.openURL('https://github.com/joce1112/CatalogoLibros180935')}>
+        Git Hub
+</Text>
+</View>
+
     );
 }
 export default withAuthenticator(HomeScreen);

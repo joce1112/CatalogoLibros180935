@@ -5,6 +5,8 @@ import { Card } from 'react-native-elements';
 import { list, create, onCreate } from '../../services/todos';
 import ButtonComponent from '../../components/Button';
 
+import i18n from "./../../../Localization/i18n";
+
 export default function SettingsScreen() {
   const [todos, setTodos] = useState();
 
@@ -38,15 +40,15 @@ export default function SettingsScreen() {
   return (
     <View style={styles.container}>
       <Card>
-        <Card.Title>Añadir un nuevo libro</Card.Title>
+      <Card.Title>{i18n.t("add a book")}</Card.Title>
         <Card.Divider />
-        <Text>Nombre:</Text>
+        <Text>{i18n.t("name")}:</Text> 
         <TextInput
           onChangeText={(text) =>
             setTodo((current) => ({ ...current, Nombre: text }))
           }
           style={{ width: 300, height: 50, backgroundColor: "#e8eaed", }} />
-        <Text>Descripcion:</Text>
+        <Text>{i18n.t("description")}:</Text>
 
         <TextInput
           onChangeText={(text) =>
@@ -54,7 +56,7 @@ export default function SettingsScreen() {
           }
           style={{ width: 300, height: 50, backgroundColor: "#e8eaed" }}
         />
-        <Text>Isbm:</Text>
+        <Text>{i18n.t("isbm")}: </Text>
 
         <TextInput
           onChangeText={(text) =>
@@ -63,7 +65,7 @@ export default function SettingsScreen() {
           style={{ width: 300, height: 50, backgroundColor: "#e8eaed" }}
         />
         
-        <Text>Categoria:</Text>
+        <Text>{i18n.t("category")}:</Text>
 
         <TextInput
           onChangeText={(text) =>

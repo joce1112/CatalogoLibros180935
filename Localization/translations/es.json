@@ -1,0 +1,23 @@
+{
+    "greeting": "Hola Mundo",
+    "profile": "Perfil",
+    "user":"Usuario",
+    "email":"Correo Electronico",
+    "phone":"Telefono",
+    
+    "name":"Nombre",
+    "description":"Descripcion",    
+    "isbm":"Isbm",
+    "status":"Estado",
+    "category":"Categoria",
+    "date":"Fecha",
+
+    "add a book":"Anadir un libro",
+
+    "other_text":"Esta es una aplicacion con multiples idiomas",
+    "nested":{
+        "nested_1": "Este es un texto animado",
+        "nested_2": "Este es otro texto animado"
+        
+    }
+}

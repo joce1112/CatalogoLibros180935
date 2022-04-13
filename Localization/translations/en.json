@@ -1,0 +1,22 @@
+{
+    "greeting": "Hello World ",
+    "profile": "Profile",
+    "user":"User",
+    "email":"Email",
+    "phone":"Phone",
+    
+    "name":"Name",
+    "description":"Description",    
+    "isbm":"Isbm",
+    "status":"Status",
+    "category":"Category",
+    "date":"Date",
+    
+    "add a book":"add a book",
+
+    "other_text":"This is an application with multilanguage",
+    "nested":{
+        "nested_1": "this is a nested text",
+        "nested_2": "this is another nested text"        
+    }
+}
